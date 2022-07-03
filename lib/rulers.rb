@@ -3,6 +3,8 @@
 require_relative "rulers/version"
 require_relative "rulers/array"
 require_relative "rulers/routing"
+require_relative "rulers/util"
+require_relative "rulers/dependencies"
 
 module Rulers
   class Error < StandardError; end

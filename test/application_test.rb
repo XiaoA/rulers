@@ -21,4 +21,6 @@ class RulersAppTest < Minitest::Test
     body = last_response.body
     assert body["Hello"]
   end
+
+  end
 end
