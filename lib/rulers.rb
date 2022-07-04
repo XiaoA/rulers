@@ -5,6 +5,7 @@ require_relative "rulers/array"
 require_relative "rulers/routing"
 require_relative "rulers/util"
 require_relative "rulers/dependencies"
+require_relative "rulers/controller"
 
 module Rulers
   class Error < StandardError; end
@@ -22,15 +23,5 @@ module Rulers
       [200, {'Content-Type' => 'text/html'},
        [text]]
     end
-  end
-
-  class Controller
-    def initialize(env)
-      @env = env
-    end
-
-    def env
-      @env
-    end    
   end
 end
