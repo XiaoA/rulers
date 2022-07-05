@@ -7,6 +7,7 @@ require_relative "rulers/util"
 require_relative "rulers/dependencies"
 require_relative "rulers/controller"
 require_relative "rulers/file_model"
+require_relative "rulers/view"
 
 module Rulers
   class Error < StandardError; end
@@ -21,8 +22,13 @@ module Rulers
       klass, act = get_controller_and_action(env)
       controller = klass.new(env)
       text = controller.send(act)
-      [200, {'Content-Type' => 'text/html'},
-       [text]]
+      r = controller.get_response
+      if r
+        [r.status, r.headers, [r.body].flatten]
+      else
+        [200, {'Content-Type' => 'text/html'},
+         [text]]
+      end
     end
   end
 end
