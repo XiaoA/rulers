@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   # Uncomment to register a new dependency of your gem
   spec.add_runtime_dependency "rack", "~> 2.2.4"
   spec.add_runtime_dependency "erubis", "~> 2.7.0"
+  spec.add_runtime_dependency "multi_json", "1.15.0"
   spec.add_development_dependency "rack-test", "~> 2.0.2"
   spec.add_development_dependency "minitest", "~> 5.16.1"
 
