@@ -90,7 +90,7 @@ TEMPLATE
         FileModel.new "db/quotes/#{id}.json"
       end
 
-      def self.method-missing(method, *args)
+      def self.method_missing(method, *args)
         if method.to_s[0..11] == "find_all_by_"
           attrib = method.to_s[12..-1]
           return find_all_by_attrib attrib, args[0]
